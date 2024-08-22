@@ -1,0 +1,32 @@
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'admin/css/style.css' %}">
+</head>
+<body>
+    <h1>Your are locked in!</h1>
+    <p>good job</p>
+    <form action="{% url 'seal' %}" method="post">
+        {% csrf_token %}
+        {{form.name.label}}
+        <br>
+        {{form.name}}
+        <br>
+        {{form.age.label}}
+        <br>
+        {{form.age}}
+        <br>
+        {{form.password.label}}
+        <br>
+        {{form.password}}
+        <br>
+        <br>
+
+        <input type="submit" value="submit">
+
+    </form>
+</body>
+</html>
